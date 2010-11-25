@@ -1,0 +1,60 @@
+body {background:url("/images/bg-clouds.png") repeat-x scroll 0 0 #C0DEED;color:#333;font:0.75em 'Lucida Grande',sans-serif;}
+a {color:#2276BB;text-decoration:none;}
+a:hover {text-decoration:underline;}
+hr {background-color:#C0DEED;border:0 none;height:1px;clear:both;}
+#container {margin:1em auto;position:relative;text-align:left;width:800px;z-index:1;}
+header {display:block;margin-bottom:17px;text-align:right;}
+.top-navigation {background-color:#FFFFFF;display:inline-block;padding:0 0.7em;white-space:nowrap;-moz-border-radius:5px;-webkit-border-radius:5px;}
+.top-navigation li {position:relative;}
+.top-navigation * {display:inline;}
+.top-navigation li a {border:1px solid transparent;display:inline-block;font-size:1.05em;padding:0.5em 0.4em;}
+header .root-link {float:left;}
+header .root-link a {color:#C0DEED;font-size:30px;text-shadow:0 0 2px #fff;}
+header .root-link a:hover {text-shadow:none;text-decoration:none;}
+
+h1 {border-bottom:1px solid #DDDDDD;color:#555555;font-size:32px;margin-bottom:10px;padding-bottom:10px;}
+h1 span {float:right;font-size:12px;font-weight:normal;}
+
+section.main {background-color:#fff;-moz-border-radius:5px;-webkit-border-radius:5px;display:block;margin-bottom:17px;padding:10px;}
+footer {background-color:#fff;-moz-border-radius:5px;-webkit-border-radius:5px;display:block;}
+footer p {padding:15px 20px;}
+
+.clr {clear:both;height:0;margin:0;padding:0;overflow:hidden;}
+
+/* Alerts */
+.notice, .error, .warning, .error-explanation {-moz-border-radius:4px;-webkit-border-radius:4px;padding:5px 10px;margin-bottom:10px;border-style:solid;border-width:1px;}
+.error, .error-explanation {background:#FFCCCC;border-color:#FF9966;}
+.warning {background:#FFFF99;border-color:#FFCC33;}
+.notice {background:#CCFF99;border-color:#CCCC33;}
+
+section.main .error-explanation ul {margin:0;}
+
+.pagination {text-align:center;}
+
+/* http://dev.opera.com/articles/view/beautiful-ui-styling-with-css3-text-shadow-box-shadow-and-border-radius/ */
+.submit, .button, input[type=submit] {border:1px solid #8ec1da;background-color:#ddeef6;color:#3985a8;padding:8px 30px 9px;cursor:pointer;-webkit-border-radius:5px;-moz-border-radius:5px;-webkit-box-shadow:inset 0 1px 3px #fff, inset 0 -15px #cbe6f2, 0 0 3px #8ec1da;-moz-box-shadow:inset 0 1px 3px #fff, inset 0 -15px #cbe6f2, 0 0 3px #8ec1da;text-shadow:0 -1px 1px #fff;font-size:16px;font-weight:normal;position:relative;text-decoration:none;}
+.submit:hover, .button:hover, input[type=submit]:hover {border:1px solid #8ec1da;text-shadow:0 -1px 1px rgba(0, 0, 0, 0.25);-webkit-box-shadow:inset 0 1px 3px #fff, inset 0 -15px #cbe6f2, 0 0 12px #8ec1da;-moz-box-shadow:inset 0 1px 3px #fff, inset 0 -15px #cbe6f2, 0 0 12px #8ec1da;text-decoration:none;}
+a.button {display:block;}
+
+textarea, .text, input[type=text] {-webkit-border-radius:4px;-moz-border-radius:4px;-moz-box-shadow:0 1px #eee;-webkit-box-shadow:0 1px #eee;border:1px solid #CCCCCC;color:#222222;font:14px Helvetica Neue,Arial,sans-serif;}
+textarea:focus, .text:focus, input[type=text]:focus {-moz-box-shadow:0 0 8px rgba(82, 168, 236, 0.5);-webkit-box-shadow:0 0 8px rgba(82, 168, 236, 0.5);border-color:rgba(82, 168, 236, 0.75);}
+textarea:hover, .text:hover, input[type=text]:hover {border-color:#999;}
+
+.placeholder {color:#aaa !important;}
+
+form.api_key {padding:40px 0;text-align:center;}
+form.api_key input[type=text] {font-size:22px;margin:0 15px;padding:2px 5px;background:url("/images/openid-logo.png") no-repeat scroll 5px 2px;vertical-align:middle;width:550px;height:28px;}
+form.api_key input[type=submit] {vertical-align:middle;}
+form.api_key p {margin-top:20px;}
+
+form.edit_user input[type=text] {font-size:22px;padding:2px 5px;display:block;width:370px;margin-bottom:15px;color:#777;}
+form.edit_user input[type=text]:focus {color:#333;}
+form.edit_user a.button {float:right;}
+input[type=submit].destroy {float:right;margin-top:20px;}
+
+
+.userlist a.button {float:left;margin-top:10px;}
+.userlist a.item {border:1px solid #C0DEED;float:left;margin:3px;width:142px;display:block;text-decoration:none;padding:3px;color:#777;}
+.userlist a.item:hover {color:#2276BB;-moz-box-shadow:0 0 8px rgba(82, 168, 236, 0.5);-webkit-box-shadow:0 0 8px rgba(82, 168, 236, 0.5);border-color:rgba(82, 168, 236, 0.75);}
+.userlist a.item img {margin-right:2px;vertical-align:middle;}
+.userlist .pagination {margin-top:10px;}

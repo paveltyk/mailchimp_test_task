@@ -1,12 +1,17 @@
 %h1 Listing users
 
-%ul
+.userlist
   - if @users.present?
     - @users.each do |user|
+      - link_to edit_user_path(user), :title => user.name, :class => 'item' do
+        = user.name
+    -#
       %li
-        = user
-        == (#{link_to 'Edit', edit_user_path(user)} | #{button_to 'Destroy', user, :method => :delete})
+        .user= user
+        .edit= link_to 'Edit', edit_user_path(user)
+        .destroy= button_to 'Destroy', user, :method => :delete
   - else
     %li <b>none</b>
-
-= link_to 'New User', new_user_path
+  .clr
+  = link_to 'New User', new_user_path, :class => 'button'
+  .clr

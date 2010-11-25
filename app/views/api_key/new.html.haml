@@ -1,15 +1,9 @@
-%h1 ApiKey#new
-%p
-  Your current Api Key is
-  %b= api_key.present? ? api_key : "blank"
-- if api_key.blank?
+%h1== MailChimp API Key <span>#{api_key.blank? ? 'No API Key provided' : api_key}</span>
+
+- form_tag :api_key, :class => 'api_key' do
+  = text_field_tag :api_key, nil, :placeholder => 'MailChimp API Key'
+  = submit_tag 'Use this key'
   %p
-    %small You will not be able to interact with MailChimp library unless you provider MailChimp API Key
-- form_tag :api_key do
-  %p
-    = label_tag :api_key
-    = text_field_tag :api_key
-  %p
-    = submit_tag 'Use this key'
-  %p
-    %small== We will not store your API key. It will be kept in Session. You can #{link_to 'destroy', destroy_api_key_path} it any time you want.
+  - if api_key.blank?
+    <small>You will not be able to interact with MailChimp library unless you provider MailChimp API Key.</small><br />
+  %small== Your API key will be stored in session. You can #{link_to 'destroy', destroy_api_key_path} it any time you want.

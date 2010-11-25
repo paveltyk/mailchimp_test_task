@@ -1,8 +1,19 @@
-!!!Transitional
-%html{ :xmlns => 'http://www.w3.org/1999/xhtml'}
+<!DOCTYPE html>
+%html
   %head
     %title MailChimp test task
+    %meta{:content => 'text/html; charset=utf-8', 'http-equiv' => 'content-type'}
+    %link{:rel => "shortcut icon", :href => "/favicon.gif"}
+    = stylesheet_link_tag 'reset', 'styles'
   %body
-    = render_navigation
-    = yield
-  
+    #container
+      %header
+        .root-link= link_to 'MailChimp test task', root_path, :title => 'MailChimp test task'
+        = render_navigation
+      %section.main
+        =# render_flash
+        = yield
+      %footer
+        %p
+          == &copy; #{Time.now.year} MailChimp test task is an #{link_to 'OpenSource project', 'http://github.com/PavelTyk/mailchimp_test_task', :title => 'MailChimp test task GitHub repository'}.
+    = javascript_include_tag 'jquery.min', 'jquery.placeholder', 'application'

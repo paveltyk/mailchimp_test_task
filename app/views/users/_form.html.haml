@@ -1,18 +1,14 @@
-= form_for @user do |f|
+= form_for @user, :html => { :class => 'edit_user' } do |f|
   -if @user.errors.any?
-    #error_explanation
+    .error
       %ul
         - @user.errors.full_messages.each do |msg|
           %li= msg
-
-  %p
-    = f.label :fname, 'First name'
-    = f.text_field :fname
-  %p
-    = f.label :lname, 'Last name'
-    = f.text_field :lname
-  %p
-    = f.label :email
-    = f.text_field :email
-  .actions
-    = f.submit 'Save'
+  = f.text_field :fname, :placeholder => 'First name'
+  = f.text_field :lname, :placeholder => 'Last name'
+  = f.text_field :email, :placeholder => 'Email'
+  = f.submit 'Save'
+  = link_to 'All users', users_path, :class => 'button'
+- unless @user.new_record?
+  = button_to 'Destroy', user_path(@user), :method => :delete, :class => 'destroy'
+.clr
