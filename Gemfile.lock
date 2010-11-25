@@ -36,6 +36,12 @@ GEM
     erubis (2.6.6)
       abstract (>= 1.0.0)
     faker (0.3.1)
+    haml (3.0.23)
+    haml-rails (0.3.4)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      haml (~> 3.0)
+      railties (~> 3.0)
     i18n (0.4.2)
     mail (2.2.10)
       activesupport (>= 2.3.6)
@@ -82,5 +88,6 @@ PLATFORMS
 DEPENDENCIES
   bson_ext (~> 1.1)
   faker (~> 0.3.1)
+  haml-rails
   mongoid (~> 2.0.0.beta.20)
   rails (= 3.0.1)
