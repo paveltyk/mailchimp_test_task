@@ -1,4 +1,10 @@
 MailchimpTestTask::Application.routes.draw do
+  resources :lists, :only => [:index] do
+    member do
+      get 'upload'
+    end
+  end
+
   resource :api_key, :only => [:new, :create, :destroy], :controller => 'api_key'
 
   # The priority is based upon order of creation:

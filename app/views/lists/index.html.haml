@@ -1,0 +1,4 @@
+%h1 Lists#index
+%ul
+  - @lists.each do |list|
+    %li= link_to "Upload users to #{list.name}", upload_list_path(list)
