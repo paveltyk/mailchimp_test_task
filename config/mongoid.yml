@@ -1,0 +1,13 @@
+defaults: &defaults
+  host: localhost
+
+development:
+  <<: *defaults
+  database: mailchimp_test_task_development
+
+test:
+  <<: *defaults
+  database: mailchimp_test_task_test
+
+production:
+  uri: <%= ENV['MONGOHQ_URL'] %>
