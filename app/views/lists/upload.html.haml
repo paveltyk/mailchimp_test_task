@@ -2,6 +2,6 @@
 %ul
   - if @uploaded_users.present?
     - @uploaded_users.each do |user|
-      %li== #{user.fname} #{user.lname} (#{user.email}) added successfully to the list "#{@list.name}"
+      %li== #{user} added successfully to the list "#{@list.name}"
   - else
     %li <b>None</b>

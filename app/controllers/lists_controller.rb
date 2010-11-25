@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+  around_filter :handle_mailchimp_errors
   before_filter :setup_api_client
 
   def index
@@ -18,5 +19,11 @@ class ListsController < ApplicationController
 
   def setup_api_client
     MailChimp::Base.api_client = MailChimp::ApiClient.new(api_key)
+  end
+
+  def handle_mailchimp_errors
+    yield
+  rescue => e
+    render :text => "Failed to proceed your request: #{e.message}"
   end
 end

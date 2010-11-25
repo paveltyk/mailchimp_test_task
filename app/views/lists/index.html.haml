@@ -1,4 +1,4 @@
 %h1 Lists#index
 %ul
   - @lists.each do |list|
-    %li= link_to "Upload users to #{list.name}", upload_list_path(list)
+    %li= link_to "Export users from DB to \"#{list.name}\" (#{pluralize list.member_count.to_i, 'member'})", upload_list_path(list)
