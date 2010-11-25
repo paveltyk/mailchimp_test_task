@@ -6,7 +6,7 @@
           %li= msg
   = f.text_field :fname, :placeholder => 'First name'
   = f.text_field :lname, :placeholder => 'Last name'
-  = f.text_field :email, :placeholder => 'Email'
+  = f.text_field :email, :placeholder => 'Email', :disabled => (true unless @user.new_record?)
   = f.submit 'Save'
   = link_to 'All users', users_path, :class => 'button'
 - unless @user.new_record?

@@ -6,6 +6,7 @@ class User
   key :email
   validates_uniqueness_of :email
   validates_presence_of :email, :fname, :lname
+  validates_format_of :email, :with => /^[A-Z0-9_\.%\+\-]+@(?:[A-Z0-9\-]+\.)+(?:[A-Z]{2,4}|museum|travel)$/i
 
 
   def build_mailchimp_member
