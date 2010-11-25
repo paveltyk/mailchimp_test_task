@@ -13,8 +13,32 @@ module MailChimp
       @options[:id]
     end
 
+    def to_param
+      id
+    end
+
+    def self.model_name
+      "list".tap do |name|
+        def name.plural; "lists"; end;
+        def name.singular; "list"; end;
+      end
+    end
+
+    def add_member(member, opts = {})
+      opts.reverse_merge! :email_type => 'html', :double_optin => true, :update_existing => false, :replace_interests => true, :send_welcome => false
+      Base.api_client.call "listSubscribe",
+                           self.id,
+                           member.email,
+                           member.merge_vars,
+                           opts[:email_type],
+                           opts[:double_optin],
+                           opts[:update_existing],
+                           opts[:replace_interests],
+                           opts[:send_welcome]
+    end
+
     def <<(member)
-      Base.api_client.call "listSubscribe", id, member.email, member.merge_vars
+      add_member(member)
     end
 
     def method_missing(method_name, *args)
