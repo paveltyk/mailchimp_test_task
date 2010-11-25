@@ -4,12 +4,13 @@ module MailChimp
   
     def initialize(api_key)
       @api_key = api_key
-      @api_client = XMLRPC::Client.new_from_uri "http://#{dc}.api.mailchimp.com/#{Base::API_VERSION}/"
+      @api_client = XMLRPC::Client.new_from_uri "http://#{data_center}.api.mailchimp.com/#{Base::API_VERSION}/"
     end
 
-    # data center
-    def dc
-      api_key.split('-').last
+    def data_center
+      api_key.scan(/(?:\w*)-(\w*)/).flatten.first.tap do |dc|
+        raise ApiClientError.new('Api Key seems to be not valid. Unable to extract Data Center.') if dc.blank?
+      end
     end
 
     def call(method, *args)
