@@ -1,4 +1,6 @@
 MailchimpTestTask::Application.routes.draw do
+  resources :users, :except => :show
+
   resources :lists, :only => [:index] do
     member do
       get 'upload'

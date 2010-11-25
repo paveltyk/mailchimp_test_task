@@ -1,0 +1,18 @@
+= form_for @user do |f|
+  -if @user.errors.any?
+    #error_explanation
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg
+
+  %p
+    = f.label :fname, 'First name'
+    = f.text_field :fname
+  %p
+    = f.label :lname, 'Last name'
+    = f.text_field :lname
+  %p
+    = f.label :email
+    = f.text_field :email
+  .actions
+    = f.submit 'Save'
