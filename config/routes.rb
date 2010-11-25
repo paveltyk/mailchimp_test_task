@@ -5,7 +5,11 @@ MailchimpTestTask::Application.routes.draw do
     end
   end
 
-  resource :api_key, :only => [:new, :create, :destroy], :controller => 'api_key'
+  match 'api_key' => 'api_key#new', :as => :api_key, :via => :get
+  match 'api_key' => 'api_key#create', :via => :post
+  match 'api_key/destroy' => 'api_key#destroy', :as => :destroy_api_key
+
+  #resource :api_key, :only => [:new, :create, :destroy], :controller => 'api_key'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
