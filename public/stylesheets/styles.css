@@ -58,3 +58,8 @@ input[type=submit].destroy {float:right;margin-top:20px;}
 .userlist a.item:hover {color:#2276BB;-moz-box-shadow:0 0 8px rgba(82, 168, 236, 0.5);-webkit-box-shadow:0 0 8px rgba(82, 168, 236, 0.5);border-color:rgba(82, 168, 236, 0.75);}
 .userlist a.item img {margin-right:2px;vertical-align:middle;}
 .userlist .pagination {margin-top:10px;}
+
+ul.mailchimp_lists, ul.user_upload_results {color:#999;list-style:circle inside none;}
+ul.mailchimp_lists li, ul.user_upload_results li {margin:5px 0;font-size:16px;}
+ul.user_upload_results li {color:#999;}
+ul.user_upload_results li span{color:#333;}
