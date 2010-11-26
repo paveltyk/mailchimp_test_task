@@ -24,6 +24,7 @@ class ListsController < ApplicationController
   def handle_mailchimp_errors
     yield
   rescue => e
-    render :text => "Failed to proceed your request: #{e.message}"
+    flash.now[:error] = "Failed to proceed your request: #{e.message}"
+    render :file => 'layouts/error'
   end
 end
