@@ -3,15 +3,10 @@
 .userlist
   - if @users.present?
     - @users.each do |user|
-      - link_to edit_user_path(user), :title => user.name, :class => 'item' do
-        = user.name
-    -#
-      %li
-        .user= user
-        .edit= link_to 'Edit', edit_user_path(user)
-        .destroy= button_to 'Destroy', user, :method => :delete
+      = link_to user.name, edit_user_path(user), :title => user.name, :class => 'item'
   - else
     %li <b>none</b>
   .clr
   = link_to 'New User', new_user_path, :class => 'button'
   .clr
+
